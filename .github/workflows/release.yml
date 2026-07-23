@@ -71,7 +71,7 @@ jobs:
         run: |
           mkdir -p dist/package
           cp module.json README.md CHANGELOG.md LICENSE dist/package/
-          for directory in scripts styles templates languages; do
+          for directory in scripts styles templates languages docs; do
             if [ -d "$directory" ]; then cp -R "$directory" dist/package/; fi
           done
           (cd dist/package && zip -r "../$ASSET_NAME" .)
@@ -94,3 +94,8 @@ jobs:
           else
             gh release create "$GITHUB_REF_NAME" dist/module.json "dist/$ASSET_NAME"               --title "Simone GM Panel Luck $GITHUB_REF_NAME"               --generate-notes
           fi
+
+      - name: Register package version with Foundry VTT
+        env:
+          FOUNDRY_RELEASE_TOKEN: ${{ secrets.FOUNDRY_RELEASE_TOKEN }}
+        run: node .github/scripts/publish-foundry-release.mjs

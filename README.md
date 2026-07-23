@@ -2,6 +2,19 @@
 
 Luck controls and dnd5e roll automation for Simone GM Panel.
 
+## Preview
+
+<table>
+  <tr>
+    <td align="center"><img src="docs/images/panel-screen.png" alt="Simone GM Panel Luck controls" width="378"></td>
+    <td align="center"><img src="docs/images/critical-hit-policy.png" alt="Critical hit policy controls" width="375"></td>
+  </tr>
+  <tr>
+    <td align="center"><strong>Luck controls</strong></td>
+    <td align="center"><strong>Critical hit policy</strong></td>
+  </tr>
+</table>
+
 ## Requirements
 
 - Simone GM Panel Core (`simone-gm-panel`) 1.0.0 or newer.
@@ -28,4 +41,4 @@ Report reproducible issues through this repository's GitHub Issues page. Include
 
 ## License
 
-Copyright ? 2026 Simone Bianco. All rights reserved. See `LICENSE`.
+Copyright (c) 2026 Simone Bianco. All rights reserved. See `LICENSE`.
