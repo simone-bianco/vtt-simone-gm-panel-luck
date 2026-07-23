@@ -1,0 +1,35 @@
+{
+  "SIMONE_GM_PANEL": {
+    "Settings": {
+      "DisableCriticals": {
+        "Name": "Disable criticals",
+        "Hint": "Legacy setting (client-scope). Use the Luck tab to control criticals per faction (world-scope)."
+      }
+    },
+    "Tabs": {
+      "Luck": "Luck"
+    },
+    "Luck": {
+      "Allies": "Allies",
+      "Enemies": "Enemies",
+      "DisableCriticals": "Disable Criticals",
+      "OutcomeModeLabel": "Critical policy",
+      "OutcomeMode": {
+        "normal": "Normal",
+        "disableCritical": "No Critical Hits",
+        "disableFailure": "No Critical Failures",
+        "disableBoth": "No Crits or Failures",
+        "alwaysCritical": "Always Critical",
+        "alwaysFailure": "Always Failure"
+      },
+      "AttackLuck": "Attack luck",
+      "AbilityLuck": "Ability / Save luck",
+      "DamageLuck": "Damage luck",
+      "ShowDistribution": "Show Distribution",
+      "InfoTooltip": "Luck controls info",
+      "DistributionTitle": "Distribution — {faction}",
+      "DistributionAllZero": "All luck values are zero — distribution is uniform.",
+      "Hint": "Modify dice rolls for allies and enemies. Luck uses a soft-threshold model: high values favor high results, low values favor low results — never deterministic. The critical policy controls d20 natural 1 and 20 behavior. Settings are world-scope and apply to all clients."
+    }
+  }
+}

@@ -1,0 +1,65 @@
+{
+  "id": "simone-gm-panel-luck",
+  "title": "Simone GM Panel Luck",
+  "description": "Luck controls and dnd5e roll automation for Simone GM Panel.",
+  "version": "1.0.0",
+  "compatibility": {
+    "minimum": "14",
+    "verified": "14"
+  },
+  "relationships": {
+    "requires": [
+      {
+        "id": "simone-gm-panel",
+        "type": "module",
+        "manifest": "https://github.com/simone-bianco/vtt-simone-gm-panel-core/releases/latest/download/module.json",
+        "compatibility": {
+          "minimum": "1.0.0",
+          "verified": "1.0.0"
+        }
+      }
+    ],
+    "systems": [
+      {
+        "id": "dnd5e",
+        "type": "system",
+        "compatibility": {
+          "minimum": "5.3.3",
+          "verified": "5.3.3"
+        }
+      }
+    ],
+    "recommends": [],
+    "conflicts": []
+  },
+  "authors": [
+    {
+      "name": "Simone Bianco"
+    }
+  ],
+  "esmodules": [
+    "scripts/main.js"
+  ],
+  "styles": [
+    "styles/module-luck.css"
+  ],
+  "languages": [
+    {
+      "lang": "en",
+      "name": "English",
+      "path": "languages/en.json"
+    },
+    {
+      "lang": "it",
+      "name": "Italiano",
+      "path": "languages/it.json"
+    }
+  ],
+  "url": "https://github.com/simone-bianco/vtt-simone-gm-panel-luck",
+  "manifest": "https://github.com/simone-bianco/vtt-simone-gm-panel-luck/releases/latest/download/module.json",
+  "download": "https://github.com/simone-bianco/vtt-simone-gm-panel-luck/releases/download/v1.0.0/simone-gm-panel-luck.zip",
+  "readme": "https://raw.githubusercontent.com/simone-bianco/vtt-simone-gm-panel-luck/main/README.md",
+  "changelog": "https://raw.githubusercontent.com/simone-bianco/vtt-simone-gm-panel-luck/main/CHANGELOG.md",
+  "license": "https://raw.githubusercontent.com/simone-bianco/vtt-simone-gm-panel-luck/main/LICENSE",
+  "bugs": "https://github.com/simone-bianco/vtt-simone-gm-panel-luck/issues"
+}

@@ -1,0 +1,172 @@
+<section class="sgmp-tab-panel tab{{#if tab.active}} active{{/if}}" data-group="{{tab.group}}" data-tab="{{tab.id}}">
+  <div class="sgmp-dice-card">
+    {{!-- Internal faction tabs + info --}}
+    <div class="sgmp-dice-card-header">
+      <nav class="sgmp-dice-faction-tabs" data-dice-faction-tabs>
+        <button type="button" class="sgmp-dice-faction-tab active" data-dice-faction-tab="allies">
+          {{localize "SIMONE_GM_PANEL.Luck.Allies"}}
+        </button>
+        <button type="button" class="sgmp-dice-faction-tab" data-dice-faction-tab="enemies">
+          {{localize "SIMONE_GM_PANEL.Luck.Enemies"}}
+        </button>
+      </nav>
+      <button type="button" class="sgmp-dice-info-btn" aria-label="{{localize 'SIMONE_GM_PANEL.Luck.InfoTooltip'}}" data-tooltip="{{localize 'SIMONE_GM_PANEL.Luck.Hint'}}">
+        <i class="fa-solid fa-circle-info"></i>
+      </button>
+    </div>
+
+    {{!-- Allies panel --}}
+    <div class="sgmp-dice-faction-panel" data-dice-faction="allies">
+      <label class="sgmp-dice-mode-row" for="sgmp-dice-allies-mode">
+        <span>{{localize "SIMONE_GM_PANEL.Luck.OutcomeModeLabel"}}</span>
+        <select
+          id="sgmp-dice-allies-mode"
+          data-testid="sgmp-dice-allies-mode"
+          name="luckControl.allies.d20OutcomeMode"
+          data-dice-faction="allies"
+          data-dice-field="d20OutcomeMode"
+        >
+          {{selectOptions luckOutcomeModes selected=luckControl.allies.d20OutcomeMode}}
+        </select>
+      </label>
+
+      <div class="sgmp-dice-slider-row">
+        <label class="sgmp-dice-slider-label" for="sgmp-dice-allies-attack-luck">{{localize "SIMONE_GM_PANEL.Luck.AttackLuck"}}</label>
+        <div class="sgmp-dice-range-row">
+          <span class="sgmp-dice-zero-marker" aria-hidden="true">0</span>
+          <input
+            id="sgmp-dice-allies-attack-luck"
+            data-testid="sgmp-dice-allies-attack-luck"
+            class="sgmp-dice-range"
+            type="range"
+            min="-10" max="10" step="1"
+            value="{{luckControl.allies.attackLuck}}"
+            name="luckControl.allies.attackLuck"
+            data-dice-faction="allies"
+            data-dice-field="attackLuck"
+          >
+          <output class="sgmp-dice-value" for="sgmp-dice-allies-attack-luck">{{luckControl.allies.attackLuckLabel}}</output>
+        </div>
+      </div>
+
+      <div class="sgmp-dice-slider-row">
+        <label class="sgmp-dice-slider-label" for="sgmp-dice-allies-ability-luck">{{localize "SIMONE_GM_PANEL.Luck.AbilityLuck"}}</label>
+        <div class="sgmp-dice-range-row">
+          <span class="sgmp-dice-zero-marker" aria-hidden="true">0</span>
+          <input
+            id="sgmp-dice-allies-ability-luck"
+            data-testid="sgmp-dice-allies-ability-luck"
+            class="sgmp-dice-range"
+            type="range"
+            min="-10" max="10" step="1"
+            value="{{luckControl.allies.abilityLuck}}"
+            name="luckControl.allies.abilityLuck"
+            data-dice-faction="allies"
+            data-dice-field="abilityLuck"
+          >
+          <output class="sgmp-dice-value" for="sgmp-dice-allies-ability-luck">{{luckControl.allies.abilityLuckLabel}}</output>
+        </div>
+      </div>
+
+      <div class="sgmp-dice-slider-row">
+        <label class="sgmp-dice-slider-label" for="sgmp-dice-allies-damage-luck">{{localize "SIMONE_GM_PANEL.Luck.DamageLuck"}}</label>
+        <div class="sgmp-dice-range-row">
+          <span class="sgmp-dice-zero-marker" aria-hidden="true">0</span>
+          <input
+            id="sgmp-dice-allies-damage-luck"
+            data-testid="sgmp-dice-allies-damage-luck"
+            class="sgmp-dice-range"
+            type="range"
+            min="-10" max="10" step="1"
+            value="{{luckControl.allies.damageLuck}}"
+            name="luckControl.allies.damageLuck"
+            data-dice-faction="allies"
+            data-dice-field="damageLuck"
+          >
+          <output class="sgmp-dice-value" for="sgmp-dice-allies-damage-luck">{{luckControl.allies.damageLuckLabel}}</output>
+        </div>
+      </div>
+
+      <button type="button" class="sgmp-dice-distribution-btn" data-action="show-dice-distribution">
+        {{localize "SIMONE_GM_PANEL.Luck.ShowDistribution"}}
+      </button>
+    </div>
+
+    {{!-- Enemies panel (hidden by default) --}}
+    <div class="sgmp-dice-faction-panel sgmp-hidden" data-dice-faction="enemies">
+      <label class="sgmp-dice-mode-row" for="sgmp-dice-enemies-mode">
+        <span>{{localize "SIMONE_GM_PANEL.Luck.OutcomeModeLabel"}}</span>
+        <select
+          id="sgmp-dice-enemies-mode"
+          data-testid="sgmp-dice-enemies-mode"
+          name="luckControl.enemies.d20OutcomeMode"
+          data-dice-faction="enemies"
+          data-dice-field="d20OutcomeMode"
+        >
+          {{selectOptions luckOutcomeModes selected=luckControl.enemies.d20OutcomeMode}}
+        </select>
+      </label>
+
+      <div class="sgmp-dice-slider-row">
+        <label class="sgmp-dice-slider-label" for="sgmp-dice-enemies-attack-luck">{{localize "SIMONE_GM_PANEL.Luck.AttackLuck"}}</label>
+        <div class="sgmp-dice-range-row">
+          <span class="sgmp-dice-zero-marker" aria-hidden="true">0</span>
+          <input
+            id="sgmp-dice-enemies-attack-luck"
+            data-testid="sgmp-dice-enemies-attack-luck"
+            class="sgmp-dice-range"
+            type="range"
+            min="-10" max="10" step="1"
+            value="{{luckControl.enemies.attackLuck}}"
+            name="luckControl.enemies.attackLuck"
+            data-dice-faction="enemies"
+            data-dice-field="attackLuck"
+          >
+          <output class="sgmp-dice-value" for="sgmp-dice-enemies-attack-luck">{{luckControl.enemies.attackLuckLabel}}</output>
+        </div>
+      </div>
+
+      <div class="sgmp-dice-slider-row">
+        <label class="sgmp-dice-slider-label" for="sgmp-dice-enemies-ability-luck">{{localize "SIMONE_GM_PANEL.Luck.AbilityLuck"}}</label>
+        <div class="sgmp-dice-range-row">
+          <span class="sgmp-dice-zero-marker" aria-hidden="true">0</span>
+          <input
+            id="sgmp-dice-enemies-ability-luck"
+            data-testid="sgmp-dice-enemies-ability-luck"
+            class="sgmp-dice-range"
+            type="range"
+            min="-10" max="10" step="1"
+            value="{{luckControl.enemies.abilityLuck}}"
+            name="luckControl.enemies.abilityLuck"
+            data-dice-faction="enemies"
+            data-dice-field="abilityLuck"
+          >
+          <output class="sgmp-dice-value" for="sgmp-dice-enemies-ability-luck">{{luckControl.enemies.abilityLuckLabel}}</output>
+        </div>
+      </div>
+
+      <div class="sgmp-dice-slider-row">
+        <label class="sgmp-dice-slider-label" for="sgmp-dice-enemies-damage-luck">{{localize "SIMONE_GM_PANEL.Luck.DamageLuck"}}</label>
+        <div class="sgmp-dice-range-row">
+          <span class="sgmp-dice-zero-marker" aria-hidden="true">0</span>
+          <input
+            id="sgmp-dice-enemies-damage-luck"
+            data-testid="sgmp-dice-enemies-damage-luck"
+            class="sgmp-dice-range"
+            type="range"
+            min="-10" max="10" step="1"
+            value="{{luckControl.enemies.damageLuck}}"
+            name="luckControl.enemies.damageLuck"
+            data-dice-faction="enemies"
+            data-dice-field="damageLuck"
+          >
+          <output class="sgmp-dice-value" for="sgmp-dice-enemies-damage-luck">{{luckControl.enemies.damageLuckLabel}}</output>
+        </div>
+      </div>
+
+      <button type="button" class="sgmp-dice-distribution-btn" data-action="show-dice-distribution">
+        {{localize "SIMONE_GM_PANEL.Luck.ShowDistribution"}}
+      </button>
+    </div>
+  </div>
+</section>

@@ -1,0 +1,245 @@
+﻿/* -------------------------------------------------------------------------- */
+/*  Dice Control                                                               */
+/* -------------------------------------------------------------------------- */
+
+.sgmp-hidden {
+  display: none !important;
+}
+
+/* â”€â”€ Dice tab â€” single card with internal faction tabs â”€â”€ */
+
+.sgmp-dice-card {
+  display: flex;
+  flex-direction: column;
+  gap: 0.75rem;
+  padding: 0.9rem;
+  border: 1px solid var(--sgmp-border);
+  border-radius: 12px;
+  background: var(--sgmp-surface-alt);
+  margin-bottom: 0.75rem;
+}
+
+.sgmp-dice-card-header {
+  display: flex;
+  align-items: center;
+  gap: 0.5rem;
+  border-bottom: 1px solid var(--sgmp-border);
+  margin: -0.9rem -0.9rem 0;
+  padding: 0 0.9rem 0;
+}
+
+.sgmp-dice-info-btn {
+  all: unset;
+  cursor: help;
+  color: var(--color-text-light-6);
+  font-size: 0.85rem;
+  padding: 0.35rem;
+  border-radius: 4px;
+  transition: color 0.15s, background 0.15s;
+}
+
+.sgmp-dice-info-btn:hover,
+.sgmp-dice-info-btn:focus-visible {
+  color: var(--color-text-light-2);
+  background: color-mix(in srgb, var(--sgmp-accent) 12%, transparent);
+}
+
+.sgmp-dice-faction-tabs {
+  display: flex;
+  gap: 0;
+  flex: 1;
+}
+
+.sgmp-dice-faction-tab {
+  all: unset;
+  padding: 0.5rem 0.9rem;
+  font-size: 0.85rem;
+  font-weight: 600;
+  color: var(--color-text-light-6);
+  cursor: pointer;
+  border-bottom: 2px solid transparent;
+  transition: color 0.15s, border-color 0.15s;
+}
+
+.sgmp-dice-faction-tab.active {
+  color: var(--color-text-light-2);
+  border-bottom-color: var(--sgmp-accent);
+}
+
+.sgmp-dice-faction-tab:hover:not(.active) {
+  color: var(--color-text-light-4);
+}
+
+.sgmp-dice-faction-panel {
+  display: flex;
+  flex-direction: column;
+  gap: 0.65rem;
+}
+
+.sgmp-dice-mode-row {
+  display: flex;
+  align-items: center;
+  gap: 0.65rem;
+  font-weight: 600;
+  font-size: 0.85rem;
+}
+
+.sgmp-dice-mode-row select {
+  flex: 1;
+  height: 1.85rem;
+  font-size: 0.82rem;
+  background: var(--sgmp-surface);
+  border: 1px solid var(--sgmp-border);
+  border-radius: 6px;
+  color: var(--color-text-light-2);
+  padding: 0 0.4rem;
+}
+
+.sgmp-dice-distribution-btn {
+  all: unset;
+  align-self: flex-start;
+  font-size: 0.78rem;
+  font-weight: 600;
+  color: var(--color-text-light-5);
+  cursor: pointer;
+  padding: 0.25rem 0.5rem;
+  border: 1px solid var(--sgmp-border);
+  border-radius: 6px;
+  margin-top: 0.25rem;
+  transition: color 0.15s, border-color 0.15s, background 0.15s;
+}
+
+.sgmp-dice-distribution-btn:hover {
+  color: var(--color-text-light-2);
+  border-color: var(--sgmp-accent);
+  background: color-mix(in srgb, var(--sgmp-accent) 10%, transparent);
+}
+
+/* â”€â”€ Distribution popup â”€â”€ */
+
+.sgmp-dice-distribution {
+  display: flex;
+  flex-direction: column;
+  gap: 0.9rem;
+  padding: 0.5rem 0;
+}
+
+.sgmp-dist-section {
+  padding-bottom: 0.5rem;
+  border-bottom: 1px solid var(--sgmp-border);
+}
+
+.sgmp-dist-section:last-child {
+  border-bottom: 0;
+  padding-bottom: 0;
+}
+
+.sgmp-dist-title {
+  margin: 0 0 0.35rem;
+  font-size: 0.88rem;
+  font-weight: 700;
+  color: var(--color-text-light-2);
+}
+
+.sgmp-dist-stats {
+  display: flex;
+  gap: 0.75rem;
+  margin-bottom: 0.5rem;
+  font-size: 0.78rem;
+  color: var(--color-text-light-5);
+  flex-wrap: wrap;
+}
+
+.sgmp-dist-bars {
+  display: flex;
+  flex-direction: column;
+  gap: 1px;
+}
+
+.sgmp-dist-bar-row {
+  display: flex;
+  align-items: center;
+  gap: 0.35rem;
+  font-size: 0.72rem;
+}
+
+.sgmp-dist-face {
+  min-width: 1.8em;
+  text-align: right;
+  font-weight: 600;
+  color: var(--color-text-light-6);
+}
+
+.sgmp-dist-bar {
+  height: 10px;
+  background: var(--sgmp-accent);
+  border-radius: 3px;
+  transition: width 0.2s;
+  min-width: 0;
+}
+
+.sgmp-dist-pct {
+  min-width: 2.8em;
+  color: var(--color-text-light-5);
+}
+
+.sgmp-dice-distribution-empty {
+  padding: 1rem;
+  text-align: center;
+  color: var(--color-text-light-6);
+  font-style: italic;
+}
+
+.sgmp-dice-card-title {
+  margin: 0 0 0.25rem;
+  font-size: 0.95rem;
+  font-weight: 700;
+  color: var(--color-text-light-2);
+  border-bottom: 1px solid var(--sgmp-border);
+  padding-bottom: 0.4rem;
+}
+
+.sgmp-dice-slider-row {
+  display: flex;
+  flex-direction: column;
+  gap: 0.3rem;
+}
+
+.sgmp-dice-slider-label {
+  font-weight: 600;
+  font-size: 0.85rem;
+  color: var(--color-text-light-5);
+}
+
+.sgmp-dice-range-row {
+  display: flex;
+  align-items: center;
+  gap: 0.65rem;
+}
+
+.sgmp-dice-range {
+  flex: 1;
+  margin: 0;
+  accent-color: var(--sgmp-accent);
+}
+
+.sgmp-dice-value {
+  min-width: 2.4em;
+  text-align: center;
+  font-weight: 700;
+  font-variant-numeric: tabular-nums;
+  color: var(--color-text-light-2);
+}
+
+.sgmp-dice-hint {
+  font-size: 0.82rem;
+}
+
+.sgmp-dice-zero-marker {
+  font-size: 0.7rem;
+  font-weight: 600;
+  color: var(--color-text-light-6);
+  min-width: 1em;
+  text-align: right;
+  user-select: none;
+}

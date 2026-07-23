@@ -1,0 +1,35 @@
+{
+  "SIMONE_GM_PANEL": {
+    "Settings": {
+      "DisableCriticals": {
+        "Name": "Disabilita critici",
+        "Hint": "Impostazione legacy (client-scope). Usa la tab Fortuna per controllare i critici per fazione (world-scope)."
+      }
+    },
+    "Tabs": {
+      "Luck": "Fortuna"
+    },
+    "Luck": {
+      "Allies": "Alleati",
+      "Enemies": "Nemici",
+      "DisableCriticals": "Disabilita Critici",
+      "OutcomeModeLabel": "Politica critici",
+      "OutcomeMode": {
+        "normal": "Normale",
+        "disableCritical": "No Colpi Critici",
+        "disableFailure": "No Fallimenti Critici",
+        "disableBoth": "No Critici o Fallimenti",
+        "alwaysCritical": "Sempre Critico",
+        "alwaysFailure": "Sempre Fallimento"
+      },
+      "AttackLuck": "Fortuna attacco",
+      "AbilityLuck": "Fortuna abilità / TS",
+      "DamageLuck": "Fortuna danni",
+      "ShowDistribution": "Mostra distribuzione",
+      "InfoTooltip": "Info controlli fortuna",
+      "DistributionTitle": "Distribuzione — {faction}",
+      "DistributionAllZero": "Tutti i valori fortuna sono a zero — distribuzione uniforme.",
+      "Hint": "Modifica i tiri di dado per alleati e nemici. La fortuna usa un modello soft-threshold: valori alti favoriscono risultati alti, valori bassi risultati bassi — mai deterministico. La politica critici controlla il comportamento di 1 e 20 naturale. Le impostazioni sono world-scope e si applicano a tutti i client."
+    }
+  }
+}
